@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+   
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+    
+    <title>Offres d'emploi - HubGames Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/icon.png">
+    <meta name="description" content="Découvrez à propos de Hub Games, notre mission, notre équipe, comment nous contacter, et les contributeurs GitHub qui ont participé à notre projet. Rejoignez-nous pour des jeux passionnants !" />
+</head>
+<body class="bg-base-100">
+    <div class="navbar bg-base-100">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+          </label>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <li><a href="">Accueil</a></li>
+            <li>
+              <a href="#game">Jeux</a>
+              <!-- <ul class="p-2">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul> -->
+            </li>
+            <li><a href="About">À Propos</a></li>
+          </ul>
+        </div>
+        <a class="btn btn-ghost normal-case text-xl">
+            <img src="image/icon.png" class="w-10 rounded">
+            HubGames Jobs
+        </a>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li><a href="https://hubgames.studio/">Accueil</a></li>
+          <!-- <li tabindex="0">
+            <details>
+              <summary>Parent</summary>
+              <ul class="p-2">
+                <li><a>Submenu 1</a></li>
+                <li><a>Submenu 2</a></li>
+              </ul>
+            </details>
+          </li> -->
+          <li><a href="#jobs">Jobs</a></li>
+          <li><a href="https://hubgames.studio/About">À Propos</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <select class="select select-bordered mx-2" data-choose-theme>
+          <option value="light">Thème Clair</option>
+          <option value="dark">Thème Sombre</option>
+          <option value="aqua">Thème DreamCloud</option>
+        </select>
+        <a href="https://github.com/TheHubGames/hub_games" class="btn btn-neutral text-white"><i class="fa-brands fa-github"></i> GitHub</a>
+      </div>
+    </div>
+
+
+
+    <div id="jobs" class="place-items-center gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
+      <div class="mt-4 card w-80 bg-base-300 shadow-xl p-5 h-full flex flex-col justify-between">
+        <div>
+          <h2 class="job-title text-2xl font-bold text-primary text-center">
+            <div class="flex items-center justify-center">
+              <div class="emoji emoji--lg emoji--mrg-r-2">👨‍💻</div>
+              <span>Développeur Web</span>
+            </div>
+          </h2>
+          <p class="job-description">HubGames Studio recherche un développeur web expérimenté pour rejoindre notre équipe. Si vous avez des compétences en développement web et que vous êtes passionné par la création de sites web interactifs, nous aimerions vous entendre.</p>
+        </div>
+        <a class="btn btn-primary mt-4 transition-transform transform hover:scale-105 hover:shadow-md">Postuler</a>
+      </div>
+    
+      <div class="mt-4 card w-80 bg-base-300 shadow-xl p-5 h-full flex flex-col justify-between">
+        <div>
+          <h2 class="job-title text-2xl font-bold text-primary text-center">
+            <div class="flex items-center justify-center">
+              <div class="emoji emoji--lg emoji--mrg-r-2">🎨</div>
+              <span>Graphiste</span>
+            </div>
+          </h2>
+          <p class="job-description">Nous sommes à la recherche d'un graphiste talentueux pour aider à donner vie à nos projets visuels. Si vous avez une passion pour le design graphique et que vous êtes créatif, postulez dès maintenant.</p>
+        </div>
+        <a class="btn btn-primary mt-4 transition-transform transform hover:scale-105 hover:shadow-md">Postuler</a>
+      </div>
+    
+      <div class="mt-4 card w-80 bg-base-300 shadow-xl p-5 h-full flex flex-col justify-between">
+        <div>
+          <h2 class="job-title text-2xl font-bold text-primary text-center">
+            <div class="flex items-center justify-center">
+              <div class="emoji emoji--lg emoji--mrg-r-2">✏️</div>
+              <span>Designer</span>
+            </div>
+          </h2>
+          <p class="job-description">HubGames Studio a besoin d'un designer pour créer des expériences visuelles exceptionnelles pour nos jeux et applications. Si vous êtes un concepteur créatif et que vous aimez repousser les limites du design, rejoignez-nous.</p>
+        </div>
+        <a class="btn btn-primary mt-4 transition-transform transform hover:scale-105 hover:shadow-md">Postuler</a>
+      </div>
+    
+      <div class="mt-4 card w-80 bg-base-300 shadow-xl p-5 h-full flex flex-col justify-between">
+        <div>
+          <h2 class="job-title text-2xl font-bold text-primary text-center">
+            <div class="flex items-center justify-center">
+              <div class="emoji emoji--lg emoji--mrg-r-2">🎮</div>
+              <span>Développeur de Jeu/App</span>
+            </div>
+          </h2>
+          <p class="job-description">Nous recherchons un développeur de jeu/app passionné pour participer à la création de nos jeux et applications. Si vous avez de l'expérience dans le développement de jeux ou d'applications, postulez dès maintenant.</p>
+        </div>
+        <a class="btn btn-primary mt-4 transition-transform transform hover:scale-105 hover:shadow-md">Postuler</a>
+      </div>
+    </div>    
+
+    
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+  const owner = 'TheHubGames',  
+      repo = 'hub_games';
+      
+axios
+  .get(`https://api.github.com/repos/${owner}/${repo}/contributors`)
+    .then(response => {
+
+    const contributors = response.data;
+    const list = document.getElementById("contributors");
+
+    contributors.forEach(contributor => {
+      const li = document.createElement('li');
+
+      const a = document.createElement('a');
+      a.href = `https://github.com/${contributor.login}`; 
+      a.innerHTML = contributor.login;
+      
+      // Add class
+      a.classList.add("hover:underline");
+      a.classList.add("mr-4"); 
+
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+
+  });
+</script>
+
+<footer class="bg-base-100">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://studio.hubgames.io" class="hover:underline">HubGames™</a>. All Rights Reserved.
+    </span>
+    <ul id="contributors" class="sm:text-center flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 name">
+
+    </ul>
+    </div>
+</footer>
+
+</body>
+</html>
