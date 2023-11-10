@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://raw.githubusercontent.com/TheHubGames/jobs_hub_games/main/image/icon.png?raw=true" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+     <!-- Primary Meta Tags -->
+     <meta name="title" content="Klaynight's Portfolio" />
+     <meta name="description" content="Bienvenue sur le porte folio de Klaynight, ici vous trouverez toutes les compétences, les expériences et les projets de Klayngiht." />
+ 
+     <!-- Open Graph -->
+     <meta property="og:type" content="website" />
+     <meta property="og:url" content="https://klaynight.studio/" />
+     <meta property="og:title" content="Klaynight's Portfolio" />
+     <meta property="og:description" content="Bienvenue sur le porte folio de Klaynight, ici vous trouverez toutes les compétences, les expériences et les projets de Klayngiht." />
+     <meta property="og:image" content="https://klaynight.studio/content/icon.jpg" />
+ 
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://klaynight.studio/" />
+    <meta property="twitter:title" content="Klaynight's Portfolio" />
+    <meta property="twitter:description" content="Bienvenue sur le porte folio de Klaynight, ici vous trouverez toutes les compétences, les expériences et les projets de Klayngiht." />
+    <meta property="twitter:image" content="https://klaynight.studio/content/icon.jpg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+   
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+    
+    <title>Offres d'emploi - HubGames Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/icon.png">
+    <meta name="description" content="Découvrez nos offres d'emploi chez HubGames Studio. Nous recherchons des développeurs web, des graphistes, des designers et des développeurs de jeux passionnés pour rejoindre notre équipe. Rejoignez-nous pour des opportunités excitantes dans le domaine du développement web et du design graphique.">
+</head>
+<body>
+
+  <div class="navbar bg-base-100">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <label tabindex="0" class="btn btn-ghost lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <li><a href="">Accueil</a></li>
+          <li>
+            <a href="#game">Jeux</a>
+            <!-- <ul class="p-2">
+              <li><a>Submenu 1</a></li>
+              <li><a>Submenu 2</a></li>
+            </ul> -->
+          </li>
+          <li><a href="About">À Propos</a></li>
+        </ul>
+      </div>
+      <a class="btn btn-ghost normal-case text-xl">
+          <img src="image/icon.png" class="w-10 rounded">
+          HubGames Jobs
+      </a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        <li><a href="https://hubgames.studio/">Accueil</a></li>
+        <!-- <li tabindex="0">
+          <details>
+            <summary>Parent</summary>
+            <ul class="p-2">
+              <li><a>Submenu 1</a></li>
+              <li><a>Submenu 2</a></li>
+            </ul>
+          </details>
+        </li> -->
+        <li><a href="#jobs">Jobs</a></li>
+        <li><a href="https://hubgames.studio/About">À Propos</a></li>
+      </ul>
+    </div>
+    <div class="navbar-end">
+      <select class="select select-bordered mx-2" data-choose-theme>
+        <option value="light">Thème Clair</option>
+        <option value="dark">Thème Sombre</option>
+        <option value="aqua">Thème DreamCloud</option>
+      </select>
+      <a href="https://github.com/TheHubGames/hub_games" class="btn btn-neutral text-white"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+  const owner = 'TheHubGames',  
+      repo = 'hub_games';
+      
+axios
+  .get(`https://api.github.com/repos/${owner}/${repo}/contributors`)
+    .then(response => {
+
+    const contributors = response.data;
+    const list = document.getElementById("contributors");
+
+    contributors.forEach(contributor => {
+      const li = document.createElement('li');
+
+      const a = document.createElement('a');
+      a.href = `https://github.com/${contributor.login}`; 
+      a.innerHTML = contributor.login;
+      
+      // Add class
+      a.classList.add("hover:underline");
+      a.classList.add("mr-4"); 
+
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+
+  });
+</script>
+
+<footer class="bg-base-100">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://studio.hubgames.io" class="hover:underline">HubGames™</a>. All Rights Reserved.
+    </span>
+    <ul id="contributors" class="sm:text-center flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 name">
+
+    </ul>
+    </div>
+</footer>
+    
+
+</body>
+
+</html>
