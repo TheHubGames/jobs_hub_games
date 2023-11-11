@@ -46,11 +46,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="image/icon.png">
     <meta name="description" content="Découvrez nos offres d'emploi chez HubGames Studio. Nous recherchons des développeurs web, des graphistes, des designers et des développeurs de jeux passionnés pour rejoindre notre équipe. Rejoignez-nous pour des opportunités excitantes dans le domaine du développement web et du design graphique.">
-</head>
-<body class="bg-base-100">
-    <div class="navbar bg-base-100">
-      <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
-<style>
+  <style>
   @font-face {
     font-family: 'Westway'; /* Nom que vous souhaitez donner à votre police */
     src: url('https://hubgames.studio/ressources/Westway.ttf') format('truetype'); /* Remplacez par le chemin correct vers votre police TTF */
@@ -85,6 +81,10 @@
 }
   
 </style>
+</head>
+<body class="bg-base-100">
+    <div class="navbar bg-base-100">
+      <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 <div id="loader">
   <div id="loader-spinner"></div>
   <p>Chargement en cours...</p>
@@ -154,15 +154,7 @@
   </div>
 </div>
 </div>
-<script>
-  window.addEventListener("load", function() {
-    // La page est entièrement chargée, masquez l'écran de chargement.
-    document.getElementById("loader").style.display = "none";
-    document.getElementById("content").style.display = "block"; // Affiche le contenu principal
-    });
-</script>
-
-
+      
     <div id="jobs" class="place-items-center gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
       <div class="mt-4 card w-80 bg-base-300 shadow-xl p-5 h-full flex flex-col justify-between">
         <div>
@@ -247,6 +239,12 @@ axios
       list.appendChild(li);
     });
 
+  });
+  
+window.addEventListener("load", function() {
+  // La page est entièrement chargée, masquez l'écran de chargement.
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("content").style.display = "block"; // Affiche le contenu principal
   });
 </script>
 
