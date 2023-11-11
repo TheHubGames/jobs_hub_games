@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+@font-face {font-family: 'Westway'; src: url('https://hubgames.studio/ressources/Westway.ttf') format('truetype'); font-weight: normal; font-style: normal;}
+@media screen and (max-width: 390px) {#affiche390 {display: none;}}
+@media screen and (min-width: 391px) {#affiche-390{display: none} #affiche390 {display: block;}}
+@media screen and (max-width: 625px) {#affiche625 {display: none;}}
+@media screen and (min-width: 626px) {#affiche-625{display: none} #affiche625 {display: block;}}
 
 html {
     font-family: 'Poppins', sans-serif;
@@ -35,4 +40,61 @@ body {
 
 .job-description {
     font-size: 16px;
+}
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 999;
+    transtion: display 2s;
+}
+
+#loader-spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 999;
+    transtion: display 2s;
+}
+
+#loader-spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
