@@ -129,7 +129,7 @@
       });
     </script>
 
-  <div class="max-w-md mx-auto bg-white p-8 mt-10 mb-10 rounded-md shadow-md">
+  <div class="max-w-md mx-auto p-8 mt-10 mb-10 rounded-md">
 
     <h1 class="text-2xl font-bold mb-4">Formulaire de Recrutement</h1>
 
@@ -137,8 +137,8 @@
 
        <!--Domaine-->
       <div class="mb-4">
-        <label for="domaine" class="block text-gray-600">Domaine :</label>
-        <select id="domaineSelect" name="domaine" class="form-select mt-1 p-2 w-full bg-gray-200 text-black" required>
+        <label for="domaine" class="block²">Domaine :</label>
+        <select id="domaineSelect" name="domaine" class="form-select mt-1 p-2 w-full" required>
           <option value="" disabled selected>Sélectionnez votre domaine</option>
           <option value="developpeur_web">Développeur Web</option>
           <option value="graphiste">Graphiste</option>
@@ -149,43 +149,43 @@
 
       <!-- Nom -->
       <div class="mb-4">
-        <label for="nom" class="block text-gray-600">Nom (facultatif):</label>
-        <input type="text" id="nom" name="nom" class="form-input mt-1 p-2 w-full bg-gray-200 text-black">
+        <label for="nom" class="block">Nom (facultatif):</label>
+        <input type="text" id="nom" name="nom" class="form-input mt-1 p-2 w-full ">
       </div>
 
       <!-- Pseudo Discord/GitHub -->
       <div class="mb-4">
-        <label for="pseudo" class="block text-gray-600">Pseudo Discord/GitHub :</label>
-        <input type="text" id="pseudo" name="pseudo" class="form-input mt-1 p-2 w-full bg-gray-200 text-black" required>
+        <label for="pseudo" class="block">Pseudo Discord/GitHub :</label>
+        <input type="text" id="pseudo" name="pseudo" class="form-input mt-1 p-2 w-full" required>
       </div>
 
       <!-- Email -->
       <div class="mb-4">
-        <label for="email" class="block text-gray-600">Email :</label>
-        <input type="email" id="email" name="email" class="form-input mt-1 p-2 w-full bg-gray-200 text-black" required>
+        <label for="email" class="block">Email :</label>
+        <input type="email" id="email" name="email" class="form-input mt-1 p-2 w-full" required>
       </div>
 
       <!-- Lien vers Portfolio/CV -->
       <div class="mb-4">
-        <label for="portfolio" class="block text-gray-600">Lien vers Portfolio/CV :</label>
-        <input type="url" id="portfolio" name="portfolio" class="form-input mt-1 p-2 w-full bg-gray-200 text-black" required>
+        <label for="portfolio" class="block">Lien vers Portfolio/CV :</label>
+        <input type="url" id="portfolio" name="portfolio" class="form-input mt-1 p-2 w-full" required>
       </div>
 
       <!-- Motivation -->
       <div class="mb-4">
-        <label for="motivation" class="block text-gray-600">Motivation :</label>
-        <textarea id="motivation" name="motivation" class="form-input mt-1 p-2 w-full bg-gray-200 text-black" rows="4" required placeholder="Expliquez ce qui vous motive..."></textarea>
+        <label for="motivation" class="block">Motivation :</label>
+        <textarea id="motivation" name="motivation" class="form-input mt-1 p-2 w-full" rows="4" required placeholder="Expliquez ce qui vous motive..."></textarea>
       </div>
 
       <!-- Description -->
       <!--<div class="mb-4">
-        <label for="description" class="block text-gray-600">Description :</label>
-        <textarea id="description" name="description" class="form-input mt-1 p-2 w-full bg-gray-200" rows="4" required></textarea>
+        <label for="description" class="block">Description :</label>
+        <textarea id="description" name="description" class="form-input mt-1 p-2 w-full" rows="4" required></textarea>
       </div> -->
 
       <!-- Bouton de soumission -->
       <div class="mt-6">
-        <button type="submit" class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Envoyer</button>
+        <button type="submit" class="btn btn-primary p-2 rounded-md">Envoyer</button>
       </div>
     </form>
 
