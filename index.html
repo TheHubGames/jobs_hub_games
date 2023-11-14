@@ -112,26 +112,6 @@
           window.location.href = url;
         });
       </script>
-
-      <!--<script>
-        document.addEventListener('DOMContentLoaded', function() {
-          // Sélectionnez tous les liens "Postuler"
-          const postulerLinks = document.querySelectorAll('.postuler-link');
-      
-          // Parcourez chaque lien pour ajouter un gestionnaire d'événements au clic
-          postulerLinks.forEach(function(link) {
-            link.addEventListener('click', function(e) {
-              e.preventDefault(); // Empêche le comportement par défaut du lien
-      
-              // Récupère le domaine à partir de l'attribut data-domaine
-              const domaine = this.getAttribute('data-domaine');
-      
-              // Redirige vers la page de recrutement avec le paramètre domaine spécifié
-              window.location.href = `recrutement-form/index.html?domaine=${domaine}`;
-            });
-          });
-        });
-      </script>-->
       
     <div id="jobs" class="place-items-center gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
       <div class="mt-4 card w-80 bg-base-300 shadow-xl p-5 h-full flex flex-col justify-between">
