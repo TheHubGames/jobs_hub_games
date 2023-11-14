@@ -62,7 +62,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../image/icon.png">
 </head>
-<body>
+<body class="bg-gray-200 p-4">
 
   <div class="navbar bg-base-100">
     <div class="navbar-start">
@@ -114,6 +114,54 @@
   </div>
 
 
+  <div class="max-w-md mx-auto bg-white p-8 mt-10 mb-10 rounded-md shadow-md">
+
+    <h1 class="text-2xl font-bold mb-4">Formulaire de Recrutement</h1>
+
+    <form action="#" method="post">
+      <!-- Nom -->
+      <div class="mb-4">
+        <label for="nom" class="block text-gray-600">Nom (facultatif):</label>
+        <input type="text" id="nom" name="nom" class="form-input mt-1 p-2 w-full bg-gray-200 text-black">
+      </div>
+
+      <!-- Pseudo Discord/GitHub -->
+      <div class="mb-4">
+        <label for="pseudo" class="block text-gray-600">Pseudo Discord/GitHub :</label>
+        <input type="text" id="pseudo" name="pseudo" class="form-input mt-1 p-2 w-full bg-gray-200 text-black" required>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-4">
+        <label for="email" class="block text-gray-600">Email :</label>
+        <input type="email" id="email" name="email" class="form-input mt-1 p-2 w-full bg-gray-200 text-black" required>
+      </div>
+
+      <!-- Lien vers Portfolio/CV -->
+      <div class="mb-4">
+        <label for="portfolio" class="block text-gray-600">Lien vers Portfolio/CV :</label>
+        <input type="url" id="portfolio" name="portfolio" class="form-input mt-1 p-2 w-full bg-gray-200 text-black" required>
+      </div>
+
+      <!-- Motivation -->
+      <div class="mb-4">
+        <label for="motivation" class="block text-gray-600">Motivation :</label>
+        <textarea id="motivation" name="motivation" class="form-input mt-1 p-2 w-full bg-gray-200 text-black" rows="4" required placeholder="Expliquez ce qui vous motive..."></textarea>
+      </div>
+
+      <!-- Description -->
+      <!--<div class="mb-4">
+        <label for="description" class="block text-gray-600">Description :</label>
+        <textarea id="description" name="description" class="form-input mt-1 p-2 w-full bg-gray-200" rows="4" required></textarea>
+      </div> -->
+
+      <!-- Bouton de soumission -->
+      <div class="mt-6">
+        <button type="submit" class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Envoyer</button>
+      </div>
+    </form>
+
+  </div>
 
 
 
