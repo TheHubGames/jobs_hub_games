@@ -281,12 +281,16 @@
                 const closeBar = document.getElementById('closeBar');
                 let width = 100;
                 const interval = setInterval(() => {
-                    width -= 1;
-                    closeBar.style.width = `${width}%`;
-                }, 50);
+                  width -= 20; // Vous pouvez ajuster la vitesse de la barre de progression ici
+                  closeBar.style.width = `${width}%`;
+                }, 1000); // La durée totale est de 5 secondes, donc diminuer de 20% toutes les secondes
+                
                 setTimeout(() => {
-                    clearInterval(interval);
-                }, 5000);
+                  clearInterval(interval);
+                  notification.classList.add('hidden');
+                  window.history.replaceState({}, document.title, window.location.pathname); // Supprimer le paramètre de l'URL
+                }, 5000); // Masquer la notification après 5 secondes
+
 
                 const closeNotification = document.getElementById('closeNotification');
                 closeNotification.addEventListener('click', () => {
@@ -306,12 +310,16 @@
                 const closeBar = document.getElementById('closeBar');
                 let width = 100;
                 const interval = setInterval(() => {
-                    width -= 1;
-                    closeBar.style.width = `${width}%`;
-                }, 50);
+                  width -= 20; // Vous pouvez ajuster la vitesse de la barre de progression ici
+                  closeBar.style.width = `${width}%`;
+                }, 1000); // La durée totale est de 5 secondes, donc diminuer de 20% toutes les secondes
+                
                 setTimeout(() => {
-                    clearInterval(interval);
-                }, 5000);
+                  clearInterval(interval);
+                  notification.classList.add('hidden');
+                  window.history.replaceState({}, document.title, window.location.pathname); // Supprimer le paramètre de l'URL
+                }, 5000); // Masquer la notification après 5 secondes
+
 
                 const closeNotification = document.getElementById('closeNotification');
                 closeNotification.addEventListener('click', () => {
