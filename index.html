@@ -280,24 +280,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       progressBar.style.transform = 'scaleX(0)';
-      progressBar.style.transformOrigin = 'right'; // Changement de l'origine de la transformation pour le "swipe"
-      notification.addEventListener('transitionend', () => {
+      progressBar.style.transformOrigin = 'right';
+      progressBar.addEventListener('transitionend', () => {
         notification.classList.add('hidden');
-        window.history.replaceState({}, document.title, window.location.pathname); // Supprimer le paramètre de l'URL
+        window.history.replaceState({}, document.title, window.location.pathname);
       }, { once: true });
-    }, 100); // Délai avant de commencer la transition (en millisecondes)
+    }, 100); 
 
     const closeNotification = document.getElementById('closeNotification');
     closeNotification.addEventListener('click', () => {
       progressBar.style.transform = 'scaleX(0)';
-      progressBar.style.transformOrigin = 'right'; // Changement de l'origine de la transformation pour le "swipe"
-      notification.addEventListener('transitionend', () => {
+      progressBar.style.transformOrigin = 'right';
+      progressBar.addEventListener('transitionend', () => {
         notification.classList.add('hidden');
-        window.history.replaceState({}, document.title, window.location.pathname); // Supprimer le paramètre de l'URL
+        window.history.replaceState({}, document.title, window.location.pathname);
       }, { once: true });
     });
   }
 });
+
 
 </script>
 </body>
