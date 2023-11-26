@@ -192,7 +192,9 @@
     </div>
   </div>
 </div>
-      
+<div id="notification" class="absolute top-0 right-0 bg-green-500 text-white p-2 hidden">
+  Le formulaire a été envoyé avec succès!
+</div>
     <div id="jobs" class="place-items-center gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
       <div class="mt-4 card w-80 bg-base-300 shadow-xl p-5 h-full flex flex-col justify-between">
         <div>
@@ -256,6 +258,23 @@
     </ul>
     </div>
 </footer>
+<script>
+  // Récupère le paramètre success de l'URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const success = urlParams.get('success');
 
+  // Vérifie si le formulaire a été soumis avec succès et affiche la notification correspondante
+  if (success === 'true') {
+    const notification = document.getElementById('notification');
+    notification.innerText = "Le formulaire a été envoyé avec succès!";
+    notification.classList.remove('hidden');
+    notification.classList.add('block');
+  } else if (success === 'false') {
+    const notification = document.getElementById('notification');
+    notification.innerText = "Échec de l'envoi du formulaire!";
+    notification.classList.remove('hidden');
+    notification.classList.add('block');
+  }
+</script>
 </body>
 </html>
