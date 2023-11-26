@@ -192,9 +192,14 @@
     </div>
   </div>
 </div>
-<div id="notification" class="absolute top-0 right-0 bg-green-500 text-white p-2 hidden">
-  Le formulaire a été envoyé avec succès!
+    
+<div id="notification" class="absolute bottom-4 right-4 p-4 rounded-md text-white hidden">
+    Le formulaire a été envoyé avec succès!
+    <div id="closeNotification" class="mt-2 text-xs text-gray-400">Cliquez pour fermer</div>
+    <div id="closeBar" class="mt-2 h-1 bg-white rounded"></div>
 </div>
+
+    
     <div id="jobs" class="place-items-center gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
       <div class="mt-4 card w-80 bg-base-300 shadow-xl p-5 h-full flex flex-col justify-between">
         <div>
@@ -259,22 +264,42 @@
     </div>
 </footer>
 <script>
-  // Récupère le paramètre success de l'URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const success = urlParams.get('success');
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const success = urlParams.get('success');
 
-  // Vérifie si le formulaire a été soumis avec succès et affiche la notification correspondante
-  if (success === 'true') {
-    const notification = document.getElementById('notification');
-    notification.innerText = "Le formulaire a été envoyé avec succès!";
-    notification.classList.remove('hidden');
-    notification.classList.add('block');
-  } else if (success === 'false') {
-    const notification = document.getElementById('notification');
-    notification.innerText = "Échec de l'envoi du formulaire!";
-    notification.classList.remove('hidden');
-    notification.classList.add('block');
-  }
-</script>
+            if (success === 'true') {
+                const notification = document.getElementById('notification');
+                notification.innerText = "Le formulaire a été envoyé avec succès!";
+                notification.classList.remove('hidden');
+                notification.classList.add('bg-green-500');
+                setTimeout(() => {
+                    notification.classList.add('hidden');
+                    window.history.replaceState({}, document.title, window.location.pathname); // Supprimer le paramètre de l'URL
+                }, 5000); // Masquer la notification après 5 secondes
+
+                const closeBar = document.getElementById('closeBar');
+                let width = 100;
+                const interval = setInterval(() => {
+                    width -= 1;
+                    closeBar.style.width = `${width}%`;
+                }, 50);
+                setTimeout(() => {
+                    clearInterval(interval);
+                }, 5000);
+
+                const closeNotification = document.getElementById('closeNotification');
+                closeNotification.addEventListener('click', () => {
+                    notification.classList.add('hidden');
+                    window.history.replaceState({}, document.title, window.location.pathname); // Supprimer le paramètre de l'URL
+                });
+            } else if (success === 'false') {
+                const notification = document.getElementById('notification');
+                notification.innerText = "Échec de l'envoi du formulaire!";
+                notification.classList.remove('hidden');
+                notification.classList.add('bg-red-500');
+            }
+        });
+    </script>
 </body>
 </html>
