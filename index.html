@@ -196,7 +196,10 @@
 <div id="notification" class="absolute bottom-4 right-4 p-4 rounded-md text-white hidden">
     Le formulaire a été envoyé avec succès!
     <div id="closeNotification" class="mt-2 text-xs text-gray-400">Cliquez pour fermer</div>
-    <div id="closeBar" class="mt-2 h-1 bg-white rounded"></div>
+    <div id="closeBar" class="mt-2 h-1 bg-white rounded">
+    <div id="progressBar" class="bg-primary rounded h-full"></div>
+</div>
+
 </div>
 
     
@@ -267,6 +270,24 @@
         window.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const success = urlParams.get('success');
+            // Fonction pour mettre à jour la barre de progression
+            function updateProgressBar() {
+              let width = 100;
+              const interval = setInterval(() => {
+                width -= 1;
+                document.getElementById('progressBar').style.width = `${width}%`;
+              }, 50);
+            
+              setTimeout(() => {
+                clearInterval(interval);
+                const notification = document.getElementById('notification');
+                notification.classList.add('hidden');
+                window.history.replaceState({}, document.title, window.location.pathname); // Supprimer le paramètre de l'URL
+              }, 5000); // Masquer la notification après 5 secondes
+            }
+            
+            // Appel de la fonction pour mettre à jour la barre de progression
+            updateProgressBar();
 
             if (success === 'true') {
                 const notification = document.getElementById('notification');
