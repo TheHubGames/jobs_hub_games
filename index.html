@@ -22,7 +22,6 @@
     <meta property="twitter:description" content="Vous cherchez un emploi dans le domaine du jeu vidéo ? Rejoignez Hub Games Studio, une entreprise innovante et dynamique qui crée des jeux passionnants et divertissants. Découvrez nos offres d’emploi et postulez en ligne dès maintenant. Hub Games Studio, le studio qui fait battre votre cœur de gamer." />
     <meta property="twitter:image" content="https://hubgames.studio/image/icon.png" />
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script>
       const owner = 'TheHubGames',  
           repo = 'hub_games';
@@ -192,13 +191,9 @@
     </div>
   </div>
 </div>
-    
-<div id="notification" class="absolute bottom-4 right-4 p-4 rounded-md text-white hidden">
-    Le formulaire a été envoyé avec succès!
-</div>
 
 </div>
-
+<div id="notification" class="fixed bottom-5 right-5 z-50 md:block p-4 rounded-md text-white"></div>
     
     <div id="jobs" class="place-items-center gap-4 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1">
       <div class="mt-4 card w-80 bg-base-300 shadow-xl p-5 h-full flex flex-col justify-between">
@@ -278,28 +273,26 @@ window.addEventListener('DOMContentLoaded', () => {
     progressBar.classList.add('progress-bar');
     notification.appendChild(progressBar);
 
-    setTimeout(() => {
-      progressBar.style.transform = 'scaleX(0)';
-      progressBar.style.transformOrigin = 'right';
-      progressBar.addEventListener('transitionend', () => {
-        notification.classList.add('hidden');
-        window.history.replaceState({}, document.title, window.location.pathname);
-      }, { once: true });
-    }, 100); 
+    const intervalDuration = 500; // 500ms interval for smoother animation
+    const totalTime = 5000; // Total time for the notification (5 seconds)
 
-    const closeNotification = document.getElementById('closeNotification');
-    closeNotification.addEventListener('click', () => {
-      progressBar.style.transform = 'scaleX(0)';
-      progressBar.style.transformOrigin = 'right';
-      progressBar.addEventListener('transitionend', () => {
-        notification.classList.add('hidden');
-        window.history.replaceState({}, document.title, window.location.pathname);
-      }, { once: true });
-    });
+    let currentTime = 0;
+    const progress = setInterval(() => {
+      currentTime += intervalDuration;
+      const width = (currentTime / totalTime) * 100;
+      progressBar.style.width = `${width}%`;
+
+      if (currentTime >= totalTime) {
+        clearInterval(progress);
+        notification.classList.add('notification-hide'); // Applique la classe pour l'animation de sortie
+        setTimeout(() => {
+          notification.classList.add('hidden');
+          window.history.replaceState({}, document.title, window.location.pathname);
+        }, 500); // Délai pour correspondre à la durée de l'animation (0.5s = 500ms)
+      }
+    }, intervalDuration);
   }
 });
-
-
 </script>
 </body>
 </html>

@@ -68,19 +68,38 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-.notification-bar {
-  position: relative;
-  overflow: hidden;
-}
-
-.notification-bar .progress-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background-color: #4CAF50; /* Couleur de la barre de progression */
-  transform-origin: right;
-  transform: scaleX(1);
-  transition: transform 1s ease-in-out; /* Réduisez la durée de transition pour l'effet de "swipe" */
-}
+/* Ajoutez une classe pour la barre de progression */
+.progress-bar {
+    height: 4px;
+    width: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Couleur de la barre de progression */
+    transition: width 0.5s linear; /* Animation de la barre de progression */
+    position: absolute; /* Positionnement absolu pour pouvoir déplacer la barre */
+    bottom: 0; /* Aligner la barre au bas */
+    left: 0; /* Aligner la barre à gauche */
+    right: 0; /* Aligner la barre à droite */
+    border-radius: 0px 0px 5px 5px;
+}   
+/* Ajoutez une classe pour l'animation de sortie */
+.notification-hide {
+    animation-name: fadeOutAndBack; /* Nom de l'animation */
+    animation-duration: 0.5s; /* Durée de l'animation */
+    animation-fill-mode: forwards; /* Conserver l'état final de l'animation */
+  }
+  
+  /* Définition de l'animation de sortie */
+  @keyframes fadeOutAndBack {
+    0% {
+      opacity: 1;
+      transform: translateZ(0);
+    }
+    70% {
+      opacity: 0.3; /* Opacité réduite pendant la transition */
+      transform: scale(0.9); /* Rétrécissement avant de reculer */
+    }
+    100% {
+      opacity: 0; /* Opacité à 0 à la fin de l'animation */
+      transform: scale(0.5) translateZ(-100px); /* Recul et rétrécissement */
+    }
+  }
+  
